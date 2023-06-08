@@ -34,6 +34,7 @@ createBtn.addEventListener('click', onCreateBtnClick);
 
 const destroyBoxes = () => {
   divBoxes.innerHTML = '';
+  inputEl.value = '';
 };
 
 destroyBtn.addEventListener('click', destroyBoxes);
