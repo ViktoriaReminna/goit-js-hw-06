@@ -5,7 +5,7 @@ function getRandomHexColor() {
 }
 
 const controlsEl = document.getElementById('controls');
-// console.log(controlsEl);
+
 const inputEl = controlsEl.firstElementChild;
 
 const createBtn = controlsEl.querySelector('[data-create]');
@@ -14,14 +14,15 @@ const destroyBtn = controlsEl.querySelector('[data-destroy]');
 
 const divBoxes = document.getElementById('boxes');
 
-// console.log(divBoxes);
-
 const createBoxes = amount => {
+  const currentWidth = 30;
   for (let i = 0; i < amount; i++) {
     const divEl = document.createElement('div');
     divEl.style.backgroundColor = getRandomHexColor();
-    divEl.style.width = '30px';
-    divEl.style.height = '30px';
+
+    const afterClickWidth = currentWidth + i * 10;
+    divEl.style.width = `${afterClickWidth}px`;
+    divEl.style.height = `${afterClickWidth}px`;
     divBoxes.appendChild(divEl);
   }
 };
